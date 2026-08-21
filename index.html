@@ -97,9 +97,13 @@
     .author-footer { margin-top:10px; padding-top:10px; border-top:1px dashed #e7edf4; font-size:.82rem; color:var(--muted); }
 
     @media (max-width: 980px) {
-      .layout { grid-template-columns:1fr; grid-template-rows:auto 52vh; height:auto; min-height:100vh; }
-      .sidebar { order:1; border-right:none; border-bottom:1px solid var(--line); padding:16px; }
-      .map-wrap { order:2; height:52vh; min-height:420px; }
+      .layout { grid-template-columns:1fr; grid-template-rows:none; height:auto; min-height:100vh; }
+      .sidebar { display:contents; }
+      .sidebar > .panel { margin:16px 16px 0; }
+      .sidebar > .panel:nth-child(1) { order:1; }
+      .sidebar > .panel:nth-child(2) { order:2; }
+      .sidebar > .panel:nth-child(n+3) { order:4; }
+      .map-wrap { order:3; height:52vh; min-height:420px; margin-top:16px; }
       .cards { grid-template-columns:1fr 1fr; }
       .meta-row { grid-template-columns:1fr; }
       .legend-box { width:calc(100% - 24px); left:12px; bottom:12px; }
@@ -119,11 +123,9 @@
     <aside class='sidebar'>
       <section class='panel'>
         <h1>Peta Interaktif Karhutla Kalimantan 2026</h1>
-        <p class='subtle'>Versi HTML yang dirapikan agar lebih mudah dibaca, dipahami, dan dipresentasikan. Fokus utamanya adalah <b>deteksi hotspot satelit</b>, <b>klaster prioritas</b>, dan <b>ringkasan afiliasi perusahaan</b> dari sumber terbuka.</p>
+        <p class='subtle'>Dashboard peta interaktif karhutla di Kalimantan tahun 2026 yang menampilkan persebaran hotspot berdasarkan data satelit, titik dengan tingkat kepercayaan tinggi, pusat klaster, tren hotspot, serta ringkasan informasi perusahaan dan afiliasinya dari sumber terbuka.</p>
         <div class='tag-row'>
-          <span class='tag'>NOAA-20 | 20 Agustus 2026</span>
-          <span class='tag teal'>Mode terang</span>
-          <span class='tag gray'>Mudah dibaca</span>
+          <span class='tag'>Satelit NOAA-20 | 20 Agustus 2026</span>
         </div>
         <div class='cards'>
           <div class='metric'><div class='label'>Deteksi NOAA-20</div><div class='value'>3,551</div><div class='small'>Semua hotspot pada 20 Agustus 2026</div></div>
